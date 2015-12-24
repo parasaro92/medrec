@@ -48,3 +48,7 @@ end
 gem 'font-awesome-rails'
 
 gem 'devise'
+
+gem 'bootstrap-sass'
+
+gem 'bootswatch-rails'
