@@ -54,3 +54,5 @@ gem 'devise'
 gem 'bootstrap-sass'
 
 gem 'bootswatch-rails'
+
+gem 'simple_form'
