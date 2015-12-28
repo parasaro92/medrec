@@ -1,9 +1,7 @@
 class PatientsController < ApplicationController
 
-  def user
-    # if current_user
-    #   redirect_to patients_path
-    # end
+  def index
+   
   end
 
   def show

@@ -9,3 +9,20 @@ one: {}
 #
 two: {}
 #  column: value
+one:
+  name: MyString
+  age: 1
+  gender: MyString
+  address: MyString
+  city: MyString
+  bloodgroup: MyString
+  user_id: 
+
+two:
+  name: MyString
+  age: 1
+  gender: MyString
+  address: MyString
+  city: MyString
+  bloodgroup: MyString
+  user_id: 

@@ -1,0 +1,17 @@
+<h1>Welcome to our App</h1>
+<p>We are here to take care of your health and records</p>
+
+<% if current_user %>
+<div class="row">
+  <div class="col-md-6 well" >
+   <h1>Consultations past</h1>
+   <br>
+   <p>Dr. Venkat Raman on 20-12-15</p>
+   <p>Blood test at vijaya diagnos on 18-12-15</p>
+  </div>
+  <div class="col-md-6">
+    <h1>Upcoming consultations</h1>
+    <button>Book an appointment</button>
+  </div>
+</div>
+<% end %>
