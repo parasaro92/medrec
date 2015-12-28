@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20151226070527) do
     t.text     "bio"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+
+ActiveRecord::Schema.define(version: 20151224121324) do
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "city"
+    t.string   "bloodgroup"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
