@@ -1,0 +1,39 @@
+// Place all the styles related to the doctors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  margin-top:60px;
+  font-family: 'Montserrat',sans-serif;
+}
+
+
+.heading:hover {
+  cursor:pointer;
+}
+
+.side-tab:hover {
+  cursor: pointer;
+}
+
+.well-sm {
+  border: none;
+  box-shadow: none !important;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.heading {
+  border: none;
+  background-color: #eee;
+
+}
+
+.body {
+  background-color: #f5f5f5;
+}
+
+.title {
+  font-weight: 400;
+  color: $white;
+}
