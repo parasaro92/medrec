@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'doctors/profile'
-
   resources :patients
+  get 'patients/profile'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   authenticated :user do
-    root to: 'patient#index' , as: :authenticated_root
+    root to: 'doctors#profile' , as: :authenticated_root
   end
   
     root 'home#land'

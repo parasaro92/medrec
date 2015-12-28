@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151226070527) do
+ActiveRecord::Schema.define(version: 20151228062513) do
+
+  create_table "patients", force: :cascade do |t|
+    t.integer  "patient_id"
+    t.text     "name"
+    t.text     "text"
+    t.string   "address"
+    t.string   "gender"
+    t.integer  "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "patients", ["patient_id"], name: "index_patients_on_patient_id", unique: true
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "doc_id"
@@ -23,17 +36,6 @@ ActiveRecord::Schema.define(version: 20151226070527) do
     t.text     "bio"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-
-ActiveRecord::Schema.define(version: 20151224121324) do
-
-  create_table "patients", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "gender"
-    t.string   "city"
-    t.string   "bloodgroup"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

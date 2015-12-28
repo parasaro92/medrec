@@ -2,6 +2,6 @@ class DoctorsController < ApplicationController
   def profile
   end
 
-  def appointment    
+  def update_profile    
   end
 end
