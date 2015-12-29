@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   
 
-    root 'home#land'
+  root 'home#land'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
