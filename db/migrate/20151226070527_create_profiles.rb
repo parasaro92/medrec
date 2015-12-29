@@ -12,6 +12,6 @@ class CreateProfiles < ActiveRecord::Migration
     end
 
     add_index :profiles, :doc_id, unique: true
-    add_index :profiles. :email, unique: true
+    add_index :profiles, :email, unique: true
   end
 end
