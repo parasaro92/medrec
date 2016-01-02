@@ -2,41 +2,40 @@
   <form class="form-horizontal well">
     <fieldset>
       <legend>Profile Details</legend>
-      <div class="form-group">
-        <label for="inputName" class="col-lg-2 control-label">Name</label>
-        <div class="col-lg-10">
-          <input type="text" class="form-control" id="inputName" placeholder="Name">
+      <%= simple_form_for @patient do |f| %>
+        <div class="form-group">
+          <div class="col-lg-10">
+            <%= f.input :name, required: true, placeholder: "name", input_html: { class: "form-control control-label"} %>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress" class="col-lg-2 control-label">Address</label>
-        <div class="col-lg-10">
-          <input type="Address" class="form-control" id="inputAddress" placeholder="Address">
+        <div class="form-group">
+          <div class="col-lg-10">
+            <%= f.input :address, required: true, input_html: { class: "form-control control-label"} %>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="inputCity" class="col-lg-2 control-label">City</label>
-        <div class="col-lg-10">
-          <input type="City" class="form-control" id="inputCity" placeholder="City">
+        <div class="form-group">
+          <div class="col-lg-10">
+            <%= f.input :bloodgroup, required: true, input_html: { class: "form-control control-label"} %>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="select" class="col-lg-2 control-label">Blood Group</label>
-        <div class="col-lg-10">
-          <select class="form-control" id="select">
-            <option>A+</option>
-            <option>AB+</option>
-            <option>O+</option>
-            <option>A-</option>
-            <option>AB-</option>
-          </select>
-          <br>
-          
+        <div class="form-group">
+          <%= f.input :city, required: true, placeholder: "city", input_html: { class: "form-control control-label"} %>
+          <div class="col-lg-10">
+            <select class="form-control" id="select">
+              <option>A+</option>
+              <option>AB+</option>
+              <option>O+</option>
+              <option>A-</option>
+              <option>AB-</option>
+            </select>
+            <br>
+            
+          </div>
         </div>
-      </div>
-       <ul class="list-inline pull-right">
-        <li><button type="button" class="btn btn-primary next-step" >Save and continue</button></li>
-      </ul>
+         <ul class="list-inline pull-right">
+          <li><button type="button" class="btn btn-primary next-step" >Save and continue</button></li>
+        </ul>
+      <% end %>
     </fieldset>
   </form>
 </div>

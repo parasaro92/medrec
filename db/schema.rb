@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228065040) do
+ActiveRecord::Schema.define(version: 20151229131334) do
+
+  create_table "doctors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "contact"
+    t.text     "qualification"
+    t.string   "gender"
+    t.string   "bio"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true
 
   create_table "patients", force: :cascade do |t|
     t.string   "name"
@@ -27,21 +40,6 @@ ActiveRecord::Schema.define(version: 20151228065040) do
 
   add_index "patients", ["user_id"], name: "index_patients_on_user_id"
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer  "doc_id"
-    t.text     "name"
-    t.text     "text"
-    t.string   "email",      default: "", null: false
-    t.string   "gender"
-    t.integer  "age"
-    t.text     "bio"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  add_index "profiles", ["doc_id"], name: "index_profiles_on_doc_id", unique: true
-  add_index "profiles", ["email"], name: "index_profiles_on_email", unique: true
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -55,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151228065040) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.boolean  "profile_incomplete"      default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
