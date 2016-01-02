@@ -2,9 +2,9 @@ class PatientsController < ApplicationController
 
   def index 
     if current_user.profile_incomplete?
-      redirect_to patient_path(:id)
+      redirect_to edit_patient_path(:id)
     else
-      redirect_to patients_path
+      redirect_to patient_path(:id)
     end
   end
 

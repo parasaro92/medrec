@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20151229131334) do
   create_table "doctors", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "encrypted_password", default: "", null: false
     t.integer  "contact"
     t.text     "qualification"
     t.string   "gender"
     t.string   "bio"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 20151229131334) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.boolean  "profile_incomplete"      default: false
+    t.boolean  "profile_incomplete"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

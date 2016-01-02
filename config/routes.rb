@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   resources :doctors
+  get 'doctors/new'
+  get 'doctors/index'
+
   resources :patients
   get 'patients/show'
 

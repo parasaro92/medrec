@@ -3,6 +3,7 @@ class CreateDoctors < ActiveRecord::Migration
     create_table :doctors do |t|
       t.string :name
       t.string :email
+      t.string :encrypted_password, null: false, default: ""
       t.integer :contact
       t.text :qualification
       t.string :gender
