@@ -24,9 +24,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'bootswatch-rails'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -35,6 +32,7 @@ gem 'bootswatch-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,4 +47,13 @@ group :development do
   gem 'spring'
 end
 
+
 gem 'font-awesome-rails'
+
+gem 'devise'
+
+gem 'bootstrap-sass'
+
+gem 'bootswatch-rails'
+
+gem 'simple_form'
