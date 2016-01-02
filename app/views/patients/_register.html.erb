@@ -1,41 +1,43 @@
 <div class="tab-pane" role="tabpanel" id="step2">
-  <form class="form-horizontal well">
-    <fieldset>
-      <legend>Profile Details</legend>
-      <%= simple_form_for @patient do |f| %>
-        <div class="form-group">
-          <div class="col-lg-10">
-            <%= f.input :name, required: true, placeholder: "name", input_html: { class: "form-control control-label"} %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-10">
-            <%= f.input :address, required: true, input_html: { class: "form-control control-label"} %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-10">
-            <%= f.input :bloodgroup, required: true, input_html: { class: "form-control control-label"} %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.input :city, required: true, placeholder: "city", input_html: { class: "form-control control-label"} %>
-          <div class="col-lg-10">
-            <select class="form-control" id="select">
-              <option>A+</option>
-              <option>AB+</option>
-              <option>O+</option>
-              <option>A-</option>
-              <option>AB-</option>
-            </select>
-            <br>
-            
-          </div>
-        </div>
-         <ul class="list-inline pull-right">
-          <li><button type="button" class="btn btn-primary next-step" >Save and continue</button></li>
-        </ul>
-      <% end %>
-    </fieldset>
-  </form>
+  <fieldset class="well">
+    <legend>Profile Details</legend>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <%= f.input :name, required: true, placeholder: "name", input_html: { class: "form-control control-label"} %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <%= f.input :address, 
+        required: true, input_html: { class: "form-control control-label"} %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <%= f.input :age, required: true, input_html: { class: "form-control control-label"} %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <%= f.input :city, required: true, input_html: { class: "form-control control-label"} %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+      <%= f.input :bloodgroup, required: true, placeholder: "Blood-Group", input_html: { class: "form-control control-label"} %>
+        <select class="form-control" id="select">
+          <option>A+</option>
+          <option>AB+</option>
+          <option>O+</option>
+          <option>A-</option>
+          <option>AB-</option>
+
+        </select>
+        <br> 
+      </div>
+    </div>
+     <ul class="list-inline pull-right">
+      <li><button type="button" class="btn btn-primary next-step" >Save and continue</button></li>
+    </ul>
+  </fieldset>
 </div>

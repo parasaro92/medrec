@@ -38,34 +38,31 @@
           </ul>
         </div>
 
-        <%= simple_form_for @patient, class: "form-horizontal well" do |f| %>
+        <form role="form">
           <div class="tab-content">
             <div class="tab-pane active" role="tabpanel" id="step1">
               <div class="container-fluid">
-                <div class="well">
+                <form class="form-horizontal well">
                   <h1>You have successfully signed up!</h1>
                   <p>Please complete the form details</p>
-                </div> 
+                </form> 
                 <ul class="list-inline pull-right">
                   <li><button type="button" class="btn btn-primary next-step" >Save and continue</button></li>
                 </ul>
               </div>
             </div>
 
-            <%= render partial: 'patients/register', locals: {f: f} %>
-            <%= render partial: 'patients/details', locals: {f: f} %>
+            <%= render 'patients/register' %>
+            <%= render 'patients/details' %>
             <div class="tab-pane" role="tabpanel" id="complete">
               <h3>Complete</h3>
               <p>You have successfully completed all steps.</p>
-              <%= f.submit "Save" %>
             </div>
             <div class="clearfix"></div>
           </div>
-        <% end %>
+        </form>
       </div>
     </section>
   </div>
 </div>
-
-
 
