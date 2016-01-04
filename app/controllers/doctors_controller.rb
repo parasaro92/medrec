@@ -5,8 +5,10 @@ class DoctorsController < ApplicationController
   end
 
   def index
-    if current_user
-      redirect_to doctors_path
+    if current_user.profile_incomplete?
+      redirect_to edit_doctor_path(:id)
+    else
+      redirect_to doctor_path(:id)
     end
   end
 
@@ -14,7 +16,7 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      log_in @doctor
+      current_user.update_attribute(:profile_incomplete, false)
       redirect_to doctors_path
     else
       redirect_to new_doctor_path
@@ -38,6 +40,6 @@ class DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.require(:doctor).permit()
+    params.require(:doctor).permit(:name, :gender, :qualification, :bio)
   end
 end
