@@ -16,12 +16,16 @@ class DoctorsController < ApplicationController
       log_in @doctor
       redirect_to doctors_path
     else
-      render 'new'
+      redirect_to new_doctor_path
     end
   end
 
   def show
     @doctor = Doctor.find(params[:id])
+  end
+
+  def update
+    
   end
 
   def edit
