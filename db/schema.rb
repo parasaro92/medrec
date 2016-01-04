@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20160102141003) do
   create_table "doctors", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "encrypted_password", default: "", null: false
     t.integer  "contact"
     t.text     "qualification"
     t.string   "gender"
     t.string   "bio"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true
