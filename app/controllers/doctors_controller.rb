@@ -1,14 +1,15 @@
 class DoctorsController < ApplicationController
 
+  def new
+    @doctor = Doctor.new
+  end
+
   def index
     if current_user
       redirect_to doctors_path
     end
   end
 
-  def new
-    @doctor = Doctor.new
-  end
 
   def create
     @doctor = Doctor.new(doctor_params)
@@ -24,17 +25,19 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
   end
 
-  def update
     
-  end
 
   def edit
     @doctor = Doctor.find(params[:id])
   end
 
+  def update
+
+  end
+
   private
 
   def doctor_params
-    params.require(:doctor).permit(:name, :email, :password, :password_confirmation)
+    params.require(:doctor).permit()
   end
 end

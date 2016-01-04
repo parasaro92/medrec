@@ -10,10 +10,21 @@ class User < ActiveRecord::Base
   has_one :patient
   has_one :doctor
   
+  
+  def patient?
+    self.role.patient?
+  end
 
+  def doctor?
+    self.role.doctor?
+  end
 
-  private
-    def set_default_role
-      self.role ||= Role.find_by_name('Patient')
-    end
+  def hospital?
+    self.role.hospital?
+  end
+
+private
+  def set_default_role
+    self.role ||= Role.find_by_name('Patient')
+  end
 end
