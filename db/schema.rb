@@ -58,9 +58,10 @@ ActiveRecord::Schema.define(version: 20160102141003) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.boolean  "profile_incomplete",     default: true
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "profile_incomplete"
+    t.integer  "role"
     t.integer  "role_id"
   end
 
