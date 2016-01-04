@@ -18,7 +18,8 @@ class PatientsController < ApplicationController
     end
   end
 
-  def show   
+  def show
+    @patient = current_user.patient   
   end
 
   def edit
