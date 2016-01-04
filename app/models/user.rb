@@ -5,5 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  has_one :patient 
+  belongs_to :role
+  before_create :set_default_role
+  has_one :patient
+  has_one :doctor
+  
+
+
+  private
+    def set_default_role
+      self.role ||= Role.find_by_name('Patient')
+    end
 end
