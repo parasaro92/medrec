@@ -11,18 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102141003) do
+ActiveRecord::Schema.define(version: 20160104133205) do
+
+  create_table "consultations", force: :cascade do |t|
+    t.integer  "patient_id"
+    t.integer  "doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "consultations", ["doctor_id"], name: "index_consultations_on_doctor_id"
+  add_index "consultations", ["patient_id"], name: "index_consultations_on_patient_id"
 
   create_table "doctors", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "encrypted_password", default: "", null: false
     t.integer  "contact"
     t.text     "qualification"
     t.string   "gender"
     t.string   "bio"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true
