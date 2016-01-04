@@ -1,1 +1,9 @@
 <h1>Edit</h1>
+<%= simple_form_for @patient do|f|%>
+  <%= f.input :name%>
+  <%=f.input :age%>
+  <%=f.input :bloodgroup%>
+  <%=f.input :address%>
+  <%=f.input :city%>
+  <%= f.submit%>
+<% end %>
