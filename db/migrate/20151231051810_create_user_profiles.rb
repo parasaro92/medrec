@@ -1,12 +1,12 @@
-class CreatePatients < ActiveRecord::Migration
+class CreateUserProfiles < ActiveRecord::Migration
   def change
-    create_table :patients do |t|
+    create_table :user_profiles do |t|
       t.string :name
       t.integer :age
+      t.string :bloodgroop
       t.string :gender
-      t.string :address
+      t.text :address
       t.string :city
-      t.string :bloodgroup
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

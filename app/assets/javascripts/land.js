@@ -24,6 +24,11 @@ $(document).ready(function () {
         var $active = $('.wizard .nav-tabs li.active');
         prevTab($active);
     });
+
+    $('#myTabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
 });
 
 function nextTab(elem) {

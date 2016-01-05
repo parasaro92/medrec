@@ -1,0 +1,10 @@
+<h1>Fill the details</h1>
+ <%= simple_form_for @profile do |f|%>
+   <%= f.input :name%>
+   <%= f.input :age%>
+   <%= f.input :gender%>
+   <%= f.input :bloodgroop%>
+   <%= f.input :address%>
+   <%= f.input :city%>
+   <%=f.submit "Save and next"%>
+ <% end %>
