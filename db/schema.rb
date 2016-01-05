@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160104133205) do
   create_table "doctors", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "encrypted_password", default: "", null: false
     t.integer  "contact"
     t.text     "qualification"
     t.string   "gender"
