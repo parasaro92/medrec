@@ -4,10 +4,6 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.new
   end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/role
   def create
     @doctor = current_user.build_doctor(doctor_params)
     if @doctor.save
@@ -19,20 +15,16 @@ class DoctorsController < ApplicationController
   end
 
   def index
-    if current_user.profile_incomplete?
-      redirect_to edit_doctor_path(:id)
-    else
-      redirect_to doctor_path(:id)
-    end
+    # if current_user.profile_incomplete?
+    #   redirect_to edit_doctor_path(:id)
+    # else
+    #   redirect_to doctor_path(:id)
+    # end
+    @doctor = Doctor.all 
   end
 
-<<<<<<< HEAD
-    def show
-    @doctor = current_user.doctor
-=======
   def show
-    @doctor = Doctor.find(params[:id])
->>>>>>> origin/role
+    @doctor = current_user.doctor
   end
 
 
@@ -42,7 +34,7 @@ class DoctorsController < ApplicationController
 
   def update
     @doctor = Doctor.find(params[:id])
-    if @doctor.update_attributes(doctor_params)
+    if @doctor.update_attribute(doctor_params)
       redirect_to doctor_path(id: current_user.id)
     else
       redirect_to edit_doctor_path

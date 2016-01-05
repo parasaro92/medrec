@@ -1,0 +1,9 @@
+<p>
+  hello
+</p>
+<%= simple_form_for @consultation do |f|%>
+  <%= f.input :appointment_date %>
+  <%= f.input :problem %>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
