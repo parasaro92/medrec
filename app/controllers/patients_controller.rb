@@ -35,7 +35,7 @@ private
     @patient = current_user.build_patient(patient_params)
     if @patient.save
       current_user.update_attribute(:profile_incomplete, false)
-      redirect_to patient_path(:id) 
+      redirect_to patient_path(id: current_user.id) 
     else
         render success_path
     end
