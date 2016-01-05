@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :consultations
   resources :doctors
   get 'doctors/new'
   get 'doctors/index'

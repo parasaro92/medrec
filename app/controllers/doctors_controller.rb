@@ -15,14 +15,15 @@ class DoctorsController < ApplicationController
   end
 
   def index
-    if current_user.profile_incomplete?
-      redirect_to edit_doctor_path(:id)
-    else
-      redirect_to doctor_path(:id)
-    end
+    # if current_user.profile_incomplete?
+    #   redirect_to edit_doctor_path(:id)
+    # else
+    #   redirect_to doctor_path(:id)
+    # end
+    @doctor = Doctor.all 
   end
 
-    def show
+  def show
     @doctor = current_user.doctor
   end
 
