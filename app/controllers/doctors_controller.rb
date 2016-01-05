@@ -4,7 +4,10 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.new
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/role
   def create
     @doctor = current_user.build_doctor(doctor_params)
     if @doctor.save
@@ -23,8 +26,13 @@ class DoctorsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
     def show
     @doctor = current_user.doctor
+=======
+  def show
+    @doctor = Doctor.find(params[:id])
+>>>>>>> origin/role
   end
 
 
