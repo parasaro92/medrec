@@ -4,8 +4,12 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.new
   end
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/role
   def create
-    @doctor = Doctor.new(doctor_params)
+    @doctor = current_user.build_doctor(doctor_params)
     if @doctor.save
       current_user.update_attribute(:profile_incomplete, false)
       redirect_to doctors_path
@@ -22,18 +26,27 @@ class DoctorsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
+    def show
+    @doctor = current_user.doctor
+=======
   def show
     @doctor = Doctor.find(params[:id])
+>>>>>>> origin/role
   end
 
-    
 
   def edit
     @doctor = Doctor.find(params[:id])
   end
 
   def update
-
+    @doctor = Doctor.find(params[:id])
+    if @doctor.update_attributes(doctor_params)
+      redirect_to doctor_path(id: current_user.id)
+    else
+      redirect_to edit_doctor_path
+    end  
   end
 
   private

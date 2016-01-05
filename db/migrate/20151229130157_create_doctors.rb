@@ -8,6 +8,7 @@ class CreateDoctors < ActiveRecord::Migration
       t.text :qualification
       t.string :gender
       t.string :bio
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

@@ -1,1 +1,21 @@
-edit.html.erb
+
+<h2>Profile</h2>
+
+
+<%= simple_form_for @doctor do |f| %>
+
+  <%= f.error_notification %>
+
+    <%= f.input :name, required: true %>
+    <%= f.input :gender %>
+    <%= f.input :qualification %>
+    <%= f.input :bio %>
+
+    <%= f.button :submit, "Update", class: "btn btn-primary btn-block" %>
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= link_to "Cancel my account", data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+  <%= link_to "Back", :back %>
+<% end %>
+

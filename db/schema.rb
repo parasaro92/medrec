@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(version: 20160104133205) do
     t.text     "qualification"
     t.string   "gender"
     t.string   "bio"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true
+  add_index "doctors", ["user_id"], name: "index_doctors_on_user_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "name"
